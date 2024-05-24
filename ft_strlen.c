@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: zombunga <zombunga@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/16 16:35:38 by zombunga          #+#    #+#             */
-/*   Updated: 2024/05/16 17:45:50 by zombunga         ###   ########.fr       */
+/*   Created: 2024/05/23 23:25:35 by zombunga          #+#    #+#             */
+/*   Updated: 2024/05/24 02:43:22 by zombunga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,10 @@ size_t	ft_strlen(const char *s)
 		i++;
 	return (i);
 }
-/*int	main(void)
-{
-	printf("%zu\n", ft_strlen("aaga"));
-	printf("%zu", strlen("aaga"));
-}*/
+/*
+** int	main(void)
+** {
+** 	printf("%zu\n", ft_strlen("aaga"));
+** 	printf("%zu", strlen("aaga"));
+** }
+*/

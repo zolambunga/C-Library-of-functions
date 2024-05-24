@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rchallie <rchallie@student.42.fr>          +#+  +:+       +#+        */
+/*   By: zombunga <zombunga@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/10 11:55:54 by rchallie          #+#    #+#             */
-/*   Updated: 2019/10/23 11:15:17 by rchallie         ###   ########.fr       */
+/*   Created: 2024/05/23 23:27:38 by zombunga          #+#    #+#             */
+/*   Updated: 2024/05/23 23:27:40 by zombunga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,16 +14,42 @@
 
 void	*ft_memchr(const void *s, int c, size_t n)
 {
-	const char	*str;
-	size_t		i;
+	const unsigned char	*p = s;
+	unsigned char		uc;
 
-	str = (const char *)s;
-	i = 0;
-	while (i < n)
+	uc = (unsigned char)c;
+	while (n-- > 0)
 	{
-		if (str[i] == c)
-			return ((void *)(s + i));
-		i++;
+		if (*p == uc)
+		{
+			return ((void *)p);
+		}
+		p++;
+	}
+	return (NULL);
+}
+/*
+int	main(void)
+{
+	const char	str[] = "Hello, world!";
+	char		ch;
+	size_t		len;
+	char		*result;
+
+	// String para teste
+	ch = 'w';
+	// Tamanho da string
+	len = sizeof(str);
+	// Usar memchr para procurar pelo caractere 'w' na string
+	result = ft_memchr(str, ch, len);
+	if (result != NULL)
+	{
+		printf("Caractere '%c' encontrado na posição: %ld\n", ch, result - str);
+	}
+	else
+	{
+		printf("Caractere '%c' não encontrado.\n", ch);
 	}
 	return (0);
 }
+*/

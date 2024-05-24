@@ -3,27 +3,27 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rchallie <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: zombunga <zombunga@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/09 14:25:42 by rchallie          #+#    #+#             */
-/*   Updated: 2019/10/14 15:45:09 by rchallie         ###   ########.fr       */
+/*   Created: 2024/05/23 23:24:37 by zombunga          #+#    #+#             */
+/*   Updated: 2024/05/24 03:39:59 by zombunga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strrchr(const char *s, int c)
-{
-	int		i;
-	char	*ptr;
+#include "libft.h"
 
-	i = 0;
-	ptr = 0;
-	while (s[i])
-	{
-		if (s[i] == c)
-			ptr = (char *)(s + i);
-		i++;
+char	*ft_strrchr(const char *str, int c)
+{
+	char *resultado = NULL; // Ponteiro pra armazenar a última ocorrência
+	while (*str != '\0')
+	{                                // prcrre a string até o final
+		if (*str == (char)c)        
+			// Verifica se o caractere atual é o buscado
+			resultado = (char *)str; // Atualiza o ponteiro resultado
+		str++;                       // Avança para o próximo caractere
 	}
-	if (s[i] == c)
-		ptr = (char *)(s + i);
-	return (ptr);
+	if (c == '\0')
+		return ((char *)str);
+			// Retorna o ponteiro para o terminador nulo se c for '\0'
+	return (resultado);       // Retorna a última ocorrência ou NULL
 }
