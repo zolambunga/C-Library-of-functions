@@ -6,9 +6,10 @@
 /*   By: zombunga <zombunga@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/23 23:26:30 by zombunga          #+#    #+#             */
-/*   Updated: 2024/05/23 23:26:32 by zombunga         ###   ########.fr       */
+/*   Updated: 2024/05/24 08:02:54 by zombunga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 #include "libft.h"
 
 char	*ft_strchr(const char *s, int c)

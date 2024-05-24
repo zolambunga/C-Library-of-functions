@@ -6,11 +6,11 @@
 /*   By: zombunga <zombunga@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/23 23:26:45 by zombunga          #+#    #+#             */
-/*   Updated: 2024/05/23 23:26:47 by zombunga         ###   ########.fr       */
+/*   Updated: 2024/05/24 08:03:24 by zombunga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include "libft.h"
 
 void	ft_putstr_fd(char *s, int fd)
 {

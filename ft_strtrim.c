@@ -6,21 +6,21 @@
 /*   By: zombunga <zombunga@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/23 23:24:29 by zombunga          #+#    #+#             */
-/*   Updated: 2024/05/23 23:24:31 by zombunga         ###   ########.fr       */
+/*   Updated: 2024/05/24 08:34:38 by zombunga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int		is_in_set(char c, const char *set)
+static int	is_in_set(char c, const char *set)
 {
 	while (*set)
 		if (c == *set++)
-			return (0);
-	return (1);
+			return (1);
+	return (0);
 }
 
-char			*ft_strtrim(char const *s1, char const *set)
+char	*ft_strtrim(char const *s1, char const *set)
 {
 	size_t	start;
 	size_t	end;
@@ -32,16 +32,11 @@ char			*ft_strtrim(char const *s1, char const *set)
 		return (ft_strdup(s1));
 	start = 0;
 	end = ft_strlen(s1);
-	while (is_in_set(s1[start], set) == 0)
+	while (s1[start] && is_in_set(s1[start], set))
 		start++;
-	if (start == ft_strlen(s1))
-	{
-		if (!(rtn = ft_strdup("")))
-			return (NULL);
-		else
-			return (rtn);
-	}
-	while (is_in_set(s1[end - 1], set) == 0)
+	if (start == end)
+		return (ft_strdup(""));
+	while (end > start && is_in_set(s1[end - 1], set))
 		end--;
 	rtn = ft_substr(s1, start, end - start);
 	return (rtn);
